@@ -1,11 +1,9 @@
 
 <div class="sections">
-  <div class="welcome">
-    <h1>Yes, {{domainName}} available for sale</h1>
-    <p>For instantly purchase. please make a paypal request</p>
-    <button>Buy now for {{price | currency}}</button>
+  <div class="welcome" *ngFor="let post of  posts">
+    <p>{{post.title}}</p>
   </div>
-  <app-register></app-register>
+  <!-- <app-register></app-register> -->
 </div>
 
 

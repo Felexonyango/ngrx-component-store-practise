@@ -1,21 +1,25 @@
 import { Routes } from '@angular/router';
+import { PostService } from './service/posts.service';
 
-export const routes: Routes = [
+export const HomeRoutes: Routes = [
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full',
+    
   },
-  {
-    path: 'home',
-    loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent)
-  },
-  {
-    path: 'domains',
-    loadComponent: () => import('./pages/domains/domains.component').then(m => m.DomainsComponent)
-  },
-  {
-    path: 'about',
-    loadComponent: () => import('./pages/about/about.component').then(m => m.AboutComponent)
-  }
+    // children:[]
+      {
+        path: 'home',
+        providers:[PostService],
+        loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent)
+      },
+      {
+        path: 'domains',
+        loadComponent: () => import('./pages/domains/domains.component').then(m => m.DomainsComponent)
+      },
+      {
+        path: 'about',
+        loadComponent: () => import('./pages/about/about.component').then(m => m.AboutComponent)
+      }
 ]

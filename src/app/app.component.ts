@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
 import {ContainerLayoutComponent} from "./components/container-layout/container-layout.component";
@@ -12,5 +12,5 @@ import {ContainerLayoutComponent} from "./components/container-layout/container-
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'landing-page';
+  @Input() title = 'landing-page';
 }
